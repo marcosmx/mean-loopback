@@ -1,0 +1,94 @@
+{
+  "name": "Card",
+  "plural": "cards",
+  "base": "Base",
+  "idInjection": true,
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": false
+    },
+    "order": {
+      "type": "number",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "accounts": {
+      "type": "hasMany",
+      "model": "Account",
+      "foreignKey": "",
+      "through": "AccountCard"
+    },
+    "category": {
+      "type": "belongsTo",
+      "model": "Category",
+      "foreignKey": ""
+    },
+    "status": {
+      "type": "belongsTo",
+      "model": "CardStatus",
+      "foreignKey": "statusId"
+    },
+    "logs": {
+      "type": "hasMany",
+      "model": "StatusLog",
+      "foreignKey": ""
+    },
+    "activities": {
+      "type": "hasMany",
+      "model": "CardActivity",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "updateAttributes"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "find"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "findById"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "findOne"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$projectMemenber",
+      "permission": "ALLOW",
+      "property": "create"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "__create__activities"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "__get__activities"
+    }
+  ],
+  "methods": []
+}

@@ -1,0 +1,32 @@
+<div id="projects" class="content-wrapper clearfix">
+ <div class="row project-list">
+  <div class="project new col-xs-3">
+   <a href="#" ng-click="openCreateProject()">
+    <i class="ion-ios7-plus-outline"></i>
+    <span class="info">
+     Create a New Project
+    </span>
+   </a>
+  </div>
+  <div ng-repeat="project in projects" class="project col-xs-3">
+   <div class="info">
+    <div class="name"><a ui-sref="template.projectDetail({id: project.id})">{{project.title}}</a></div>
+    <div class="category">{{project.description}}</div>
+    <div class="last-update">
+     {{moment(project.createdAt).fromNow()}}
+    </div>
+   </div>
+   <div class="members">
+    
+    <a href="#" class="add-more">
+     <i class="fa fa-plus"></i>
+    </a>
+    <ul class="menu">
+     <li><a href="#">Invite a new user</a></li>
+     <li><a href="#">Change name</a></li>
+     <li><a href="#">Delete project</a></li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</div>

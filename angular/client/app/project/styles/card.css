@@ -1,0 +1,15 @@
+.category{
+	display: table;
+	width: 100%;
+}
+
+.project-card{
+	height: 150px;
+	width: 100%;
+	background-color: #eee;
+	border-radius: 5px;
+}
+
+.project.card.create{
+	
+}

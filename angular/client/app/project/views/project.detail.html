@@ -1,0 +1,75 @@
+<div class="container">
+
+        <!-- Page Header -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">{{project.title}}
+                    <small>{{project.description}}</small>
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h2 style="margin:0;">Create Category</h2>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" ng-model="category.title">
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-primary" ng-click="addCategory()">Add category</button>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-3" ng-repeat="category in categories">
+                <h4>{{category.title}}</h4>
+                <a ng-click="addCard(category)">add card</a>
+
+                <div ng-repeat="card in category.cards" class="col-md-3" ng-repeat="category in categories">
+                <h3><a ng-click="openCard(card)">{{card.title}}</a></h3>
+                <p>{{card.description}}</p>    
+                <span>{{card.status.name}}</span>
+                
+            </div>
+
+            </div>
+            
+        </div>
+        <!-- /.row -->
+
+        <!-- Projects Row -->
+        <!--div class="row">
+            <div class="col-md-4 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                </a>
+                <h3>
+                    <a href="#">Project Name</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+            <div class="col-md-4 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                </a>
+                <h3>
+                    <a href="#">Project Name</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+            <div class="col-md-4 portfolio-item">
+                <a href="#">
+                    <img class="img-responsive" src="http://placehold.it/700x400" alt="">
+                </a>
+                <h3>
+                    <a href="#">Project Name</a>
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        
+
+    </div>

@@ -1,0 +1,23 @@
+{
+  "name": "Base",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "properties": {
+    "createdAt": {
+      "type": "date"
+    },
+    "updatedAt": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    }
+  ],
+  "methods": []
+}

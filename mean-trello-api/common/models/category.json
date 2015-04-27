@@ -1,0 +1,64 @@
+{
+  "name": "Category",
+  "plural": "categories",
+  "base": "Base",
+  "idInjection": true,
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "project": {
+      "type": "belongsTo",
+      "model": "Project",
+      "foreignKey": ""
+    },
+    "cards": {
+      "type": "hasMany",
+      "model": "Card",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "__create__cards"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "find"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "findById"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "findOne"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$projectMember",
+      "permission": "ALLOW",
+      "property": "__create__cards"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$projectAdmin",
+      "permission": "ALLOW",
+      "property": "__create__cards"
+    }
+  ],
+  "methods": []
+}

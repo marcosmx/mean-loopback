@@ -1,0 +1,27 @@
+{
+  "name": "CardActivity",
+  "plural": "card/activities",
+  "base": "Base",
+  "idInjection": true,
+  "properties": {
+    "message": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "card": {
+      "type": "belongsTo",
+      "model": "Card",
+      "foreignKey": ""
+    },
+    "account": {
+      "type": "belongsTo",
+      "model": "Account",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": []
+}

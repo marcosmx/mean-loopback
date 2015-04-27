@@ -1,0 +1,85 @@
+{
+  "name": "Account",
+  "plural": "accounts",
+  "base": "User",
+  "idInjection": true,
+  "properties": {
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "username": {
+      "type": "string",
+      "required": true
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "date"
+    },
+    "updatedAt": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "cards": {
+      "type": "hasMany",
+      "model": "Card",
+      "foreignKey": "",
+      "through": "AccountCard"
+    },
+    "projects": {
+      "type": "hasMany",
+      "model": "Project",
+      "foreignKey": "",
+      "through": "AccountProject"
+    },
+    "activities": {
+      "type": "hasMany",
+      "model": "CardActivity",
+      "foreignKey": ""
+    }
+  },
+  "acls": [{
+    "principalType": "ROLE",
+    "principalId": "$authenticated",
+    "permission": "ALLOW",
+    "property": "__create__projects"
+  }, {
+    "principalType": "ROLE",
+    "principalId": "$authenticated",
+    "permission": "ALLOW",
+    "property": "__get__projects"
+  }, {
+    "principalType": "ROLE",
+    "principalId": "$authenticated",
+    "permission": "ALLOW",
+    "property": "find"
+  }, {
+    "principalType": "ROLE",
+    "principalId": "$authenticated",
+    "permission": "ALLOW",
+    "property": "findById"
+  }, {
+    "principalType": "ROLE",
+    "principalId": "$authenticated",
+    "permission": "ALLOW",
+    "property": "findOne"
+  }, {
+    "principalType": "ROLE",
+    "principalId": "$authenticated",
+    "permission": "ALLOW",
+    "property": "__link__projects"
+  }, {
+    "principalType": "ROLE",
+    "principalId": "$authenticated",
+    "permission": "ALLOW",
+    "property": "__updateById__projects"
+  }],
+  "methods": []
+}
